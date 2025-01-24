@@ -11,7 +11,10 @@ import { provideRouter } from '@angular/router';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    
+    provideMessaging(() => {
+      return getMessaging();
+  }),
     provideRouter(routes), provideFirebaseApp(() => initializeApp({"projectId":"friendlychat-f7943","appId":"1:670831623939:web:e2b7989835dd4c91b2f336","storageBucket":"friendlychat-f7943.firebasestorage.app","apiKey":"AIzaSyDAAjXjaouy513_tPF-Gbb9kAgm1Iv_6SM","authDomain":"friendlychat-f7943.firebaseapp.com","messagingSenderId":"670831623939"})), provideAuth(() => getAuth()), provideFirestore(() => getFirestore()), provideMessaging(() => getMessaging()), provideStorage(() => getStorage())
   ],
 };
+
